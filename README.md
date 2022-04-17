@@ -1,1 +1,1 @@
-A project on the function printf.
+An ALX project on the function printf.
