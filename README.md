@@ -1,2 +1,1 @@
-# printf
-A project on printf.
+A project on the function printf.
