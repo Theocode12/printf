@@ -16,6 +16,54 @@ The function _printf() produces an output according to a format as described bel
 .in
 The format string is a character string, beginning and ending in its initial shift state, if any. The format string is composed of zero or more directives: ordinary characters (not %), whichare copied unchanged to the output stream; and conversion specifications, each of which results in fetching zero or more subsequent arguments. Each conversion specification is introduced by the character %, and ends with a conversion specifier. In between there may be (in this order) zero or more flags, an optional minimum field width, an optional precision and an optional length modifier.
 
+The overall syntax of a conversion specification is:
+.in
+
+%[$][flags][width][.precision][length modifier]conversion
+
+.B Flag characters
+.in
+The character % is followed by zero or more of the following flags:
+
+.B #
+.in
+The value should be converted to an "alternate form".  For o conversions, the first character of the output string is made zero (by prefixing a 0 if it was not zero already). For x and X conversions, a nonzero result has the string "0x" (or "0X" for X conversions) prepended to it.
+
+.B 0
+.in
+The value should be zero padded.  For d, i, o, u, x, X, a, A, e, E, f, F, g, and G conversions, the converted value is padded on the left with zeros rather than blanks.  Ifthe 0 and - flags both appear, the 0 flag is ignored.  If a precision is given with a numeric conversion (d, i, o, u, x, and X), the 0flag is ignored. For other conversions, the behavior is undefined.
+
+.B -
+.in
+The converted value is to be left adjusted on the field boundary.  (The default is right justification.) The converted value is padded on the right with blanks, rather than on the left with blanks or zeros. A - overrides a 0 if both are given.
+
+.B ' '
+.in
+(a space) A blank should be left before a positive number (or empty string) produced by a signed conversion.
+
+.B +
+.in
+A sign (+ or -) should always be placed before a number produced by a signed conversion.  By default, a sign is used only for negative numbers.  A + overrides a space if both are used.
+
+.B Length modifier
+.in
+Here, "integer conversion" stands for d, i, o, u, x, or X conversion.
+
+.B l
+.in
+(ell) A following integer conversion corresponds to a long or unsigned long argument, or a following n conversion corresponds to a pointer to a long argument, or a following c conversion corresponds to a wint_t argument, or a following s conversion corresponds to a pointer to wchar_t argument.
+
+.B h
+.in
+A following integer conversion corresponds to a short or unsigned short argument, or a following n conversion corresponds to a pointer to a short argument.
+
+.B Field width
+.in
+If the converted value has fewer characters than the field width, it will be padded with spaces on the left (or right, if the left-adjustment flag has been given).  Instead of a decimal digit string one may write "*" or "*m$" (for some decimal integer m) to specify that the field width is given in the next argument, or in the m-th argument, respectively, which must be of type int.  A negative field width is taken as a '-' flag followed by a positive field width.
+
+.B Precision
+.in
+Instead of a decimal digit string one may write "*" or "*m$" (for some decimal integer m) to specify that the precision is given in the next argument, or in the m-th argument, respectively, which must be of type int. If the precision is given as just '.', the precision is taken to be zero. A negative precision is taken as if the precision were omitted.
 
 .B Conversion specifiers
 .in
@@ -45,7 +93,7 @@ converts a decimal number to octal and outputs it stdout
 .in
 outputs unsigned int numbers to stdout
 
-.B Hers's how to use the specifiers:
+.B Hers's some examples:
 
 _printf("example... int:%i, char:%c, string:%s, hexa:%X", 6, 'a', "alx africa", 15);
 
