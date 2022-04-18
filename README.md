@@ -1,6 +1,16 @@
 # An ALX project on the function printf.
+.
+.
+.
+.
+.
+<h3> Functionality
 <hr>
-### Functionality
-<hr>
-#### Authors
-
+.
+.
+.
+.
+.
+<h3> Authors
+.
+.
