@@ -16,6 +16,9 @@ void check_specifiers(char c, va_list ap, int *count)
 		{'s', str_spesi},
 		{'i', int_spesi},
 		{'d', int_spesi},
+		{'b', bin_spesi},
+		{'o', oct_spesi},
+		{'x', hex_spesi},
 		{'0', NULL},
 	};
 	for (j = 0; f_specifiers[j].c; j++)
