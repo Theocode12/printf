@@ -3,6 +3,7 @@
 /**
  * char_spesi - fuction to print a char
  * @ap: arguement pointer
+ * @count: number of char printed
  */
 
 void char_spesi(va_list ap, int *count)
@@ -14,6 +15,7 @@ void char_spesi(va_list ap, int *count)
 /**
  * str_spesi - fuction to print a string
  * @ap: arguement pointer
+ * @count: number of char printed
  */
 
 void str_spesi(va_list ap, int *count)

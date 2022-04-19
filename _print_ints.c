@@ -3,6 +3,7 @@
 /**
  * int_spesi - prints ints to stdout
  * @ap: pointer arguement
+ * @count: number of char printed
  */
 
 void int_spesi(va_list ap, int *count)

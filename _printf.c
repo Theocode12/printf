@@ -5,6 +5,7 @@
  * check_specifiers - a function that checks for the right specifier
  * @c: character
  * @ap: arguement pointer
+ * @count: number of char printed
  */
 
 void check_specifiers(char c, va_list ap, int *count)
