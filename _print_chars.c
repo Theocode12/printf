@@ -21,36 +21,44 @@ void char_spesi(va_list ap, int *count)
 void str_spesi(va_list ap, int *count)
 {
 	int i;
+
 	char *ptr = va_arg(ap, char *);
 
 	for (i = 0; ptr[i]; i++, (*count)++)
 		_putchar(ptr[i]);
 }
 
-
 /**
  * rev_spesi - function to reverse a string
- * 
- * @param ap - arguement pointer
- * @param count - number of char printed
+ * @ap: arguement pointer
+ * @count: number of char printed
  */
 
 void rev_spesi(va_list ap, int *count)
 {
 	char *ptr = va_arg(ap, char *);
+
 	rev(ptr, count);
 }
 
+/**
+ * rev - sub-function to reverse a string
+ * @str: string
+ * @count: number of char
+ */
+
 void rev(char *str, int *count)
 {
-    int i;
-	for (i = 0; str[i]; i++);
+	int i;
+
+	for (i = 0; str[i]; i++)
+		;
 	i--;
 	while (*(str + 1))
 		str++;
 	for (; i >= 0; i--, (*count)++)
 	{
-	    _putchar(*(str));
-	    str--;
+		_putchar(*(str));
+		str--;
 	}
 }
