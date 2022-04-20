@@ -38,42 +38,42 @@ void check_specifiers(char c, va_list ap, int *count)
  */
 int _printf(const char *format, ...)
 {
-	const char *ptr;
 	int i, count = 0;
 	va_list ap;
 
-	ptr = format;
-	if (ptr == NULL)
+	if (format == NULL)
 		return (-1);
 	va_start(ap, format);
-	for (i = 0; ptr[i]; i++)
+	for (i = 0; format[i]; i++)
 	{
-		if (ptr[i] != '%')
+		if (format[i] != '%')
 		{
-			_putchar(ptr[i]);
+			_putchar(format[i]);
 			count++;
 		}
 		else
 		{
 			i++;
-			if (ptr[i] == '%')
+			if (format[i] == '%')
 			{
-			_putchar('%');
+				_putchar('%');
 				count++;
 			}
-			else if (ptr[i] ==  '!')
-            {
-                _putchar('%');
-                _putchar('!');
-                count += 2;
-            }
-            else if (ptr[i] == 'K')
-            {
-                _putchar('%');
-                _putchar('K');
-                count += 2;
-            }
-			check_specifiers(ptr[i], ap, &count);
+			else if (format[i] ==  '!')
+			{
+				_putchar('%');
+				_putchar('!');
+				count += 2;
+			}
+			else if (format[i] == 'K')
+			{
+				_putchar('%');
+				_putchar('K');
+				count += 2;
+			}
+			else if (!(format[i]))
+				return (count);
+			check_specifiers(format[i], ap, &count);
 		}
 	}
 	va_end(ap);
