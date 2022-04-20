@@ -72,7 +72,7 @@ int _printf(const char *format, ...)
 				count += 2;
 			}
 			else if (!(format[i]))
-				return (count);
+				_putchar('%');
 			check_specifiers(format[i], ap, &count);
 		}
 	}
