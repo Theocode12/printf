@@ -58,9 +58,21 @@ int _printf(const char *format, ...)
 			i++;
 			if (ptr[i] == '%')
 			{
-				_putchar('%');
+			_putchar('%');
 				count++;
 			}
+			else if (ptr[i] ==  '!')
+            {
+                _putchar('%');
+                _putchar('!');
+                count += 2;
+            }
+            else if (ptr[i] == 'K')
+            {
+                _putchar('%');
+                _putchar('K');
+                count += 2;
+            }
 			check_specifiers(ptr[i], ap, &count);
 		}
 	}
