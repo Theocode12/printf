@@ -15,12 +15,15 @@ typedef struct specifiers
 int _printf(const char *format, ...);
 void check_specifiers(char c, va_list ap, int *count);
 int _putchar(char c);
+int neg_d(va_list ap);
 void char_spesi(va_list ap, int *count);
 void str_spesi(va_list ap, int *count);
 void bin_spesi(va_list ap, int *count);
 void int_spesi(va_list ap, int *count);
 void oct_spesi(va_list ap, int *count);
+void uns_spesi(va_list ap, int *count);
 void hex_spesi(va_list ap, int *count);
+void c_hex_spesi(va_list ap, int *count);
 char *convert_uns(unsigned int num, int base);
 char *convert(int num, int base);
 #endif

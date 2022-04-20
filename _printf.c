@@ -15,10 +15,12 @@ void check_specifiers(char c, va_list ap, int *count)
 		{'c', char_spesi},
 		{'s', str_spesi},
 		{'i', int_spesi},
+		{'u', uns_spesi},
 		{'d', int_spesi},
 		{'b', bin_spesi},
 		{'o', oct_spesi},
 		{'x', hex_spesi},
+		{'X', c_hex_spesi},
 		{'0', NULL},
 	};
 	for (j = 0; f_specifiers[j].c; j++)

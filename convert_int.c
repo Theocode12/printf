@@ -43,3 +43,22 @@ char *convert_uns(unsigned int num, int base)
 	} while (num != 0);
 	return (ptr);
 }
+
+/**
+ * neg_d - determines if the int arguement is negative
+ * @ap: arguement pointer
+ * Return: the integer the arguement pointer holds
+ */
+
+int neg_d(va_list ap)
+{
+	int i;
+
+	i = va_arg(ap, int);
+	if (i < 0)
+	{
+		i = -i;
+		_putchar('-');
+	}
+	return (i);
+}
