@@ -19,6 +19,8 @@ int _putchar(char c);
 int neg_d(va_list ap);
 void char_spesi(va_list ap, int *count);
 void str_spesi(va_list ap, int *count);
+void rev_spesi(va_list ap, int *count);
+void rev(char *str, int *count);
 void bin_spesi(va_list ap, int *count);
 void int_spesi(va_list ap, int *count);
 void oct_spesi(va_list ap, int *count);

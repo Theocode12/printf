@@ -21,6 +21,7 @@ void check_specifiers(char c, va_list ap, int *count)
 		{'o', oct_spesi},
 		{'x', hex_spesi},
 		{'X', c_hex_spesi},
+		{'r', rev_spesi},
 		{'0', NULL},
 	};
 	for (j = 0; f_specifiers[j].c; j++)
