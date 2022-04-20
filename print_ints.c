@@ -42,11 +42,11 @@ void uns_spesi(va_list ap, int *count)
 
 void bin_spesi(va_list ap, int *count)
 {
-	int i;
+	unsigned int i;
 	char *ptr;
 
-	i = neg_d(ap);
-	ptr = convert(i, 2);
+	i = va_arg(ap, unsigned int);
+	ptr = convert_uns(i, 2);
 	for (i = 0; ptr[i]; i++, (*count)++)
 		_putchar(ptr[i]);
 }
