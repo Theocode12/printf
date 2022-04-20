@@ -22,18 +22,11 @@ void str_spesi(va_list ap, int *count)
 {
 	int i;
 	char *ptr = va_arg(ap, char *);
-	char *str = "(null)";
 
 	if (!ptr)
-	{
-		for (i = 0; str[i]; i++)
-			_putchar(str[i]);
-	}
-	else
-	{
+		ptr = "(null)";
 	for (i = 0; ptr[i]; i++, (*count)++)
 		_putchar(ptr[i]);
-	}
 }
 
 /**
