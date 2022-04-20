@@ -46,7 +46,7 @@ void bin_spesi(va_list ap, int *count)
 	char *ptr;
 
 	i = va_arg(ap, unsigned int);
-	ptr = convert_uns(i, 2);
+	ptr = convert(i, 2);
 	for (i = 0; ptr[i]; i++, (*count)++)
 		_putchar(ptr[i]);
 }

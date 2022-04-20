@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 #include "main.h"
 
 /**
@@ -32,6 +33,35 @@ void check_specifiers(char c, va_list ap, int *count)
 }
 
 /**
+ * edge_cases - a function that takes into consideration edge cases
+ * @c: char passed
+ * @count: counts chars to be printed
+ */
+
+void edge_cases(char c, int *count)
+{
+	if (c == '%')
+	{
+		_putchar('%');
+		count++;
+	}
+	else if (c  ==  '!')
+	{
+		_putchar('%');
+		_putchar('!');
+		count += 2;
+		}
+	else if (c == 'K')
+	{
+		_putchar('%');
+		_putchar('K');
+		count += 2;
+	}
+	else
+		return;
+}
+
+/**
  * _printf - formats a string and prints to the stdout
  * @format: string literal
  * Return: number of characters printed
@@ -54,25 +84,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-			if (format[i] == '%')
-			{
-				_putchar('%');
-				count++;
-			}
-			else if (format[i] ==  '!')
-			{
-				_putchar('%');
-				_putchar('!');
-				count += 2;
-			}
-			else if (format[i] == 'K')
-			{
-				_putchar('%');
-				_putchar('K');
-				count += 2;
-			}
-			else if (!(format[i]))
-				_putchar('%');
+			edge_cases(format[i], &count);
 			check_specifiers(format[i], ap, &count);
 		}
 	}
