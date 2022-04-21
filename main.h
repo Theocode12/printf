@@ -17,7 +17,7 @@ int _printf(const char *format, ...);
 void check_specifiers(char c, va_list ap, int *count);
 int _putchar(char c);
 int neg_d(va_list ap);
-void edge_cases(char c, int *count);
+void rot13_spesi(va_list ap, int *count);
 void char_spesi(va_list ap, int *count);
 void str_spesi(va_list ap, int *count);
 void rev_spesi(va_list ap, int *count);

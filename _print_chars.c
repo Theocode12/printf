@@ -63,3 +63,37 @@ void rev(char *str, int *count)
 		str--;
 	}
 }
+
+/**
+ * rot13_spesi - function that gives out the rotted output of a string
+ * @ap: arguement pointer
+ * @count: number of char printed
+ */
+
+void rot13_spesi(va_list ap, int *count)
+{
+	int i, j;
+	char alpha_ptr[] = "ABCDEFGHIJKLMnopqrstuvwxyz";
+	char rot13_ptr[] = "NOPQRSTUVWXYZabcdefghijklm";
+	char *ptr;
+
+	ptr = va_arg(ap, char *);
+	for (i = 0; ptr[i]; i++, (*count)++)
+	{
+		j = 0;
+		while (alpha_ptr[j])
+		{
+			if (ptr[i] == alpha_ptr[j])
+			{
+				_putchar(rot13_ptr[j]);
+				break;
+			}
+			else if (ptr[i] == rot13_ptr[j])
+			{
+				_putchar(alpha_ptr[j]);
+				break;
+			}
+			j++;
+		}
+	}
+}
