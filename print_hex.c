@@ -52,7 +52,7 @@ void prt_asci_spesi(va_list ap, int *count)
 	char *p;
 
 	ptr = va_arg(ap, char *);
-	for (int i = 0; ptr[i]; i++, (*count)++)
+	for (i = 0; ptr[i]; i++, (*count)++)
 	{
 		if (ptr[i] < 32 || ptr[i] >= 127)
 		{
