@@ -81,19 +81,24 @@ void rot13_spesi(va_list ap, int *count)
 	for (i = 0; ptr[i]; i++, (*count)++)
 	{
 		j = 0;
-		while (alpha_ptr[j])
+		if ((ptr[i] > 64 && ptr[i] < 91) || (ptr[i] > 96 && ptr[i] < 123))
 		{
-			if (ptr[i] == alpha_ptr[j])
+			while (alpha_ptr[j])
 			{
-				_putchar(rot13_ptr[j]);
-				break;
+				if (ptr[i] == alpha_ptr[j])
+				{
+					_putchar(rot13_ptr[j]);
+					break;
+				}
+				else if (ptr[i] == rot13_ptr[j])
+				{
+					_putchar(alpha_ptr[j]);
+					break;
+				}
+				j++;
 			}
-			else if (ptr[i] == rot13_ptr[j])
-			{
-				_putchar(alpha_ptr[j]);
-				break;
-			}
-			j++;
 		}
+		else
+		_putchar(ptr[i]);
 	}
 }
