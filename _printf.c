@@ -56,8 +56,6 @@ void edge_cases(char c, int *count)
 		_putchar('K');
 		count += 2;
 	}
-	else
-		return;
 }
 
 /**
