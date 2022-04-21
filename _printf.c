@@ -23,6 +23,7 @@ void check_specifiers(char c, va_list ap, int *count)
 		{'X', c_hex_spesi},
 		{'r', rev_spesi},
 		{'R', rot13_spesi},
+		{'S', prt_asci_spesi},
 		{'0', NULL},
 	};
 	for (j = 0; f_specifiers[j].c; j++)

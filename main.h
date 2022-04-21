@@ -27,6 +27,7 @@ void int_spesi(va_list ap, int *count);
 void oct_spesi(va_list ap, int *count);
 void uns_spesi(va_list ap, int *count);
 void hex_spesi(va_list ap, int *count);
+void prt_asci_spesi(va_list ap, int *count);
 void c_hex_spesi(va_list ap, int *count);
 char *convert_uns(unsigned int num, int base);
 char *convert(int num, int base);

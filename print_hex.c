@@ -38,3 +38,37 @@ void hex_spesi(va_list ap, int *count)
 	for (i = 0; ptr[i]; i++, (*count)++)
 		_putchar(ptr[i]);
 }
+
+/**
+ * prt_asci_spesi - print hexadecimails in place of uprintable chars
+ * @ap: pointer arguement
+ * @count: number of char printed
+ */
+
+void prt_asci_spesi(va_list ap, int *count)
+{
+	unsigned int i, j;
+	char *ptr;
+	char *p;
+
+	ptr = va_arg(ap, char *);
+	for (int i = 0; ptr[i]; i++, (*count)++)
+	{
+		if (ptr[i] < 32 || ptr[i] >= 127)
+		{
+			_putchar('\\');
+			_putchar('x');
+			*count += 2;
+			if (ptr[i] <= 15)
+			{
+				_putchar('0');
+				(*count)++;
+			}
+			p = convert_uns(ptr[i], 16);
+			for (j = 0; p[j]; j++, (*count)++)
+				_putchar(p[j] - 32);
+		}
+		else
+			_putchar(ptr[i]);
+	}
+}
